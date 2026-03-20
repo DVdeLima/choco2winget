@@ -151,7 +151,7 @@ Write-Host "Retrieving Chocolatey packages..." -ForegroundColor Cyan
 $tempFile = Join-Path $env:TEMP "choco2winget_$(Get-Random).txt"
 
 try {
-    choco list --localonly > $tempFile 2>$null
+    choco list > $tempFile 2>$null
     if ($LASTEXITCODE -ne 0) {
         Write-Host "ERROR: Failed to retrieve Chocolatey package list." -ForegroundColor Red
         exit 1
